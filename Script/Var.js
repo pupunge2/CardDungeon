@@ -8,6 +8,19 @@ var state = '';
 var gameType = 'Poker';
 var paused = false;
 
+var animation = {
+    tick : 0,
+    cardFlip : 0,
+};
+
 var dealer = {
     deck : [],
+    hand : [],
+    handChange : [],
+};
+
+var playerCard = {
+    deck : [],
+    hand : [],
+    handChange : [],
 };

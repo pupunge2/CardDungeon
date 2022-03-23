@@ -10,7 +10,7 @@ function main() {
 
     imageLoad();
 
-    game = setInterval(loop, 25);
+    game = setInterval(loop, 33);
 }
 
 function errorHandle(a, b, c) {
