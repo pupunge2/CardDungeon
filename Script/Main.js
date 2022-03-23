@@ -1,4 +1,5 @@
 window.onload = main;
+window.onerror = errorHandle;
 
 function main() {
     canvas = document.getElementById('game');
@@ -9,7 +10,12 @@ function main() {
 
     imageLoad();
 
-    setInterval(loop, 25);
+    game = setInterval(loop, 25);
+}
+
+function errorHandle(a, b, c) {
+    alert(`${a} ${b} ${c}`);
+    clearInterval(game);
 }
 
 function loop() {
@@ -23,6 +29,8 @@ function loop() {
         loopCardGameSelect();
     } else if (scene === 'Collection') {
         loopCollection();
+    } else if (scene === 'CardMiniGame') {
+        loopCardMiniGame();
     }
 }
 
@@ -40,5 +48,7 @@ function mouseUp(event) {
         mouseUpCardGameSelect(x, y);
     } else if (scene === 'Collection') {
         mouseUpCollection(x, y);
+    } else if (scene === 'CardMiniGame') {
+        mouseUpCardMiniGame(x, y);
     }
 }

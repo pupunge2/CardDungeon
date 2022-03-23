@@ -40,7 +40,8 @@ function mouseUpCardGameSelect(x, y) {
 
         for (var i = 0; i < 6; i++) {
             if (pointInsideRect(x, y, UICardGameSelect.list[i][0], UICardGameSelect.list[i][1], UICardGameSelect.list[i][2], UICardGameSelect.list[i][3])) {
-                scene = 'CardGame';
+                scene = 'CardMiniGame';
+                state = 'Start';
                 gameType = 'Poker';
             }
         }
