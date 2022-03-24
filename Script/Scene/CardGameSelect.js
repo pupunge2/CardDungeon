@@ -4,11 +4,11 @@ var UICardGameSelect = {
 
     list : [
         [160, 160, 160, 160],
-        [320, 160, 160, 160],
-        [480, 160, 160, 160],
-        [160, 320, 160, 160],
-        [320, 320, 160, 160],
-        [480, 320, 160, 160]
+        [360, 160, 160, 160],
+        [560, 160, 160, 160],
+        [160, 360, 160, 160],
+        [360, 360, 160, 160],
+        [560, 360, 160, 160]
     ],
 };
 
@@ -40,9 +40,15 @@ function mouseUpCardGameSelect(x, y) {
 
         for (var i = 0; i < 6; i++) {
             if (pointInsideRect(x, y, UICardGameSelect.list[i][0], UICardGameSelect.list[i][1], UICardGameSelect.list[i][2], UICardGameSelect.list[i][3])) {
-                scene = 'CardMiniGame';
-                state = 'Start';
-                gameType = 'Poker';
+                if (i === 0) {
+                    scene = 'CardMiniGame';
+                    state = 'Start';
+                    gameType = 'Poker';
+                } else if (i === 1) {
+                    scene = 'CardMiniGame';
+                    state = 'Start';
+                    gameType = 'Eighteen';
+                }
             }
         }
     }

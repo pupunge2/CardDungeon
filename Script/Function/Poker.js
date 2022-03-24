@@ -60,4 +60,26 @@ function playerHandGeneratePoker() {
     for (i = 0; i < 5; i++) {
         playerCard.hand.push(playerCard.deck.shift());
     }
+
+    playerCard.handChange = [false, false, false, false, false];
+}
+
+function playerHandChangePoker() {
+    for (var i = 0; i < 5; i++) {
+        if (playerCard.handChange[i] === true) {
+            var temp_card = playerCard.deck[0];
+            playerCard.hand[i] = playerCard.deck[0];
+            playerCard.deck.shift();
+        }
+    }
+}
+
+function dealerHandGeneratePoker() {
+    dealer.hand = [];
+
+    for (i = 0; i < 5; i++) {
+        dealer.hand.push(dealer.deck.shift());
+    }
+
+    dealer.handChange = [false, false, false, false, false];
 }

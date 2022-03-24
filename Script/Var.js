@@ -11,6 +11,7 @@ var paused = false;
 var animation = {
     tick : 0,
     cardFlip : 0,
+    dealerCardFlip : false,
 };
 
 var dealer = {
